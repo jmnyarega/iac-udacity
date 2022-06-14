@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "ENV",
+    "ParameterValue": "Dev"
+  },
+  {
+    "ParameterKey": "ImageId",
+    "ParameterValue": "ami-0022f774911c1d690"
+  },
+  {
+    "ParameterKey": "KeyPairName",
+    "ParameterValue": "cf"
+  }
+]
