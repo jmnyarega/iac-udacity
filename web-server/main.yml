@@ -57,14 +57,13 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
-          sudo apt-get update -y
-          sudo apt-get install apache2 -y
-          sudo systemctl start apache2.service
+          echo "Hello, World" > index.html
+          nohup busybox httpd -f -p 8080 &
       ImageId: !Ref ImageId
       KeyName: !Ref KeyPairName
       SecurityGroups:
         - Ref: EC2SG
-      InstanceType: t2.medium
+      InstanceType: t2.micro
       BlockDeviceMappings:
         - DeviceName: "/dev/sdk"
           Ebs:
@@ -135,6 +134,6 @@ Resources:
 Outputs:
   PublicUrl:
     Description: public url from load balancer
-    Value: !Ref EC2LB
+    Value: !GetAtt EC2LB.DNSName
     Export:
       Name: !Sub ${ENV}-PUBLIC-URL
