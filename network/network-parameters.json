@@ -1,10 +1,10 @@
 [
   {
-    "ParameterKey": "ENV",
-    "ParameterValue": "Dev"
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "UdacityProject"
   },
   {
-    "ParameterKey": "CIDR",
+    "ParameterKey": "VpcCIDR",
     "ParameterValue": "10.0.0.0/16"
   },
   {
